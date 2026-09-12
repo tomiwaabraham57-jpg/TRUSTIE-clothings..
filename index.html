@@ -1,657 +1,279 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>TRUSTIE CLOTHINGS | Premium Men's Fashion</title>
+  <title>TRUSTIE CLOTHINGS | Premium Men's Fashion</title>
 
-<style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
-
-html{
-  scroll-behavior:smooth;
-}
-
-body{
-  font-family:Arial, Helvetica, sans-serif;
-  background:#f4f1eb;
-  color:#151515;
-}
-
-a{
-  text-decoration:none;
-  color:inherit;
-}
-
-header{
-  background:#111;
-  color:#fff;
-  padding:18px 6%;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  position:sticky;
-  top:0;
-  z-index:1000;
-}
-
-.logo{
-  font-size:20px;
-  font-weight:800;
-  letter-spacing:2px;
-}
-
-nav{
-  display:flex;
-  gap:25px;
-}
-
-nav a{
-  font-size:13px;
-  text-transform:uppercase;
-  letter-spacing:1px;
-}
-
-nav a:hover{
-  opacity:.6;
-}
-
-.customer{
-  position:absolute;
-  right:6%;
-  top:58px;
-  font-size:11px;
-  color:#aaa;
-}
-
-/* HERO */
-
-.hero{
-  min-height:90vh;
-  padding:90px 6%;
-  display:flex;
-  align-items:center;
-  background:
-    linear-gradient(90deg,rgba(0,0,0,.75),rgba(0,0,0,.15)),
-    url("https://images.unsplash.com/photo-1617137968427-85924c800a22?auto=format&fit=crop&w=1800&q=85");
-  background-size:cover;
-  background-position:center;
-  color:white;
-}
-
-.hero-content{
-  max-width:760px;
-}
-
-.label{
-  font-size:13px;
-  letter-spacing:4px;
-  font-weight:bold;
-}
-
-.hero h1{
-  font-size:clamp(48px,9vw,100px);
-  line-height:.9;
-  margin:25px 0;
-  letter-spacing:-4px;
-}
-
-.hero p{
-  max-width:650px;
-  font-size:18px;
-  line-height:1.8;
-  color:#eee;
-}
-
-.buttons{
-  margin-top:35px;
-  display:flex;
-  gap:15px;
-  flex-wrap:wrap;
-}
-
-.btn{
-  display:inline-block;
-  padding:16px 25px;
-  background:#fff;
-  color:#111;
-  font-weight:bold;
-  font-size:12px;
-  letter-spacing:1px;
-  transition:.3s;
-}
-
-.btn:hover{
-  transform:translateY(-3px);
-}
-
-.btn.dark{
-  background:#111;
-  color:#fff;
-}
-
-/* COLLECTION NUMBERS */
-
-.collection-nav{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  border-bottom:1px solid #ccc;
-}
-
-.collection-nav div{
-  padding:30px 20px;
-  border-right:1px solid #ccc;
-}
-
-.collection-nav span{
-  font-size:11px;
-  color:#777;
-}
-
-.collection-nav h3{
-  margin-top:10px;
-  font-size:15px;
-}
-
-/* SECTIONS */
-
-section{
-  padding:100px 6%;
-}
-
-.section-label{
-  font-size:11px;
-  letter-spacing:3px;
-  font-weight:bold;
-  color:#777;
-  margin-bottom:15px;
-}
-
-.section-title{
-  font-size:clamp(38px,6vw,70px);
-  line-height:1;
-  margin-bottom:20px;
-}
-
-.intro{
-  max-width:650px;
-  color:#666;
-  line-height:1.8;
-}
-
-/* THE EDIT */
-
-.edit{
-  background:#ebe7df;
-}
-
-.cards{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:20px;
-  margin-top:50px;
-}
-
-.card{
-  background:#fff;
-  overflow:hidden;
-}
-
-.card-image{
-  height:380px;
-  background-size:cover;
-  background-position:center;
-}
-
-.card:nth-child(1) .card-image{
-  background-image:url("https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&w=900&q=80");
-}
-
-.card:nth-child(2) .card-image{
-  background-image:url("https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?auto=format&fit=crop&w=900&q=80");
-}
-
-.card:nth-child(3) .card-image{
-  background-image:url("https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&w=900&q=80");
-}
-
-.card:nth-child(4) .card-image{
-  background-image:url("https://images.unsplash.com/photo-1610652492500-ded49ceeb378?auto=format&fit=crop&w=900&q=80");
-}
-
-.card-info{
-  padding:22px;
-}
-
-.card-info h3{
-  font-size:22px;
-  margin-bottom:7px;
-}
-
-.card-info p{
-  color:#777;
-  font-size:14px;
-}
-
-/* GALLERY */
-
-.gallery{
-  background:#111;
-  color:#fff;
-}
-
-.gallery .intro{
-  color:#aaa;
-}
-
-.gallery-grid{
-  margin-top:50px;
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:10px;
-}
-
-.gallery-item{
-  height:330px;
-  background-size:cover;
-  background-position:center;
-}
-
-.gallery-item:nth-child(1){
-  background-image:url("https://images.unsplash.com/photo-1617127365659-c47fa864d8bc?auto=format&fit=crop&w=1000&q=80");
-}
-
-.gallery-item:nth-child(2){
-  background-image:url("https://images.unsplash.com/photo-1610652492500-ded49ceeb378?auto=format&fit=crop&w=1000&q=80");
-}
-
-.gallery-item:nth-child(3){
-  background-image:url("https://images.unsplash.com/photo-1598808503746-f34c53b9323e?auto=format&fit=crop&w=1000&q=80");
-}
-
-.gallery-item:nth-child(4){
-  background-image:url("https://images.unsplash.com/photo-1598033129183-c4f50c736f10?auto=format&fit=crop&w=1000&q=80");
-}
-
-.gallery-item:nth-child(5){
-  background-image:url("https://images.unsplash.com/photo-1621072156002-e2fccdc0b176?auto=format&fit=crop&w=1000&q=80");
-}
-
-.gallery-item:nth-child(6){
-  background-image:url("https://images.unsplash.com/photo-1555069519-127aadedf1ee?auto=format&fit=crop&w=1000&q=80");
-}
-
-/* ABOUT */
-
-.about{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:80px;
-  align-items:center;
-}
-
-.about-text{
-  font-size:20px;
-  line-height:1.8;
-  color:#555;
-}
-
-.about-list{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:25px;
-  margin-top:35px;
-}
-
-.about-list div{
-  border-top:1px solid #bbb;
-  padding-top:15px;
-  font-size:13px;
-  font-weight:bold;
-}
-
-/* ORDER */
-
-.order{
-  background:#e8e2d8;
-}
-
-.order-wrapper{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:80px;
-}
-
-.order-info p{
-  max-width:500px;
-  color:#666;
-  line-height:1.8;
-}
-
-form{
-  background:#fff;
-  padding:35px;
-}
-
-.form-group{
-  margin-bottom:20px;
-}
-
-label{
-  display:block;
-  font-size:11px;
-  font-weight:bold;
-  letter-spacing:1px;
-  margin-bottom:8px;
-}
-
-input,
-select,
-textarea{
-  width:100%;
-  padding:14px;
-  border:1px solid #ccc;
-  background:#fafafa;
-  font-family:inherit;
-  outline:none;
-}
-
-input:focus,
-select:focus,
-textarea:focus{
-  border-color:#111;
-}
-
-textarea{
-  min-height:100px;
-  resize:vertical;
-}
-
-.submit{
-  width:100%;
-  border:0;
-  padding:17px;
-  background:#111;
-  color:white;
-  font-weight:bold;
-  letter-spacing:1px;
-  cursor:pointer;
-}
-
-/* FOOTER */
-
-footer{
-  background:#090909;
-  color:white;
-  padding:50px 6%;
-}
-
-.footer-grid{
-  display:grid;
-  grid-template-columns:2fr 1fr 1fr 1fr;
-  gap:30px;
-}
-
-footer h3{
-  margin-bottom:15px;
-}
-
-footer p,
-footer a{
-  color:#999;
-  font-size:13px;
-  line-height:2;
-}
-
-.copyright{
-  border-top:1px solid #333;
-  margin-top:40px;
-  padding-top:25px;
-  color:#666;
-  font-size:12px;
-}
-
-/* MOBILE */
-
-@media(max-width:800px){
-
-  header{
-    padding:17px 5%;
-  }
-
-  .logo{
-    font-size:16px;
-  }
-
-  nav{
-    gap:12px;
-  }
-
-  nav a{
-    font-size:9px;
-  }
-
-  .customer{
-    display:none;
-  }
-
-  .hero{
-    min-height:85vh;
-    padding:70px 5%;
-  }
-
-  .hero h1{
-    letter-spacing:-2px;
-  }
-
-  .hero p{
-    font-size:15px;
-  }
-
-  section{
-    padding:70px 5%;
-  }
-
-  .collection-nav{
-    grid-template-columns:1fr 1fr;
-  }
-
-  .cards{
-    grid-template-columns:1fr 1fr;
-  }
-
-  .card-image{
-    height:280px;
-  }
-
-  .gallery-grid{
-    grid-template-columns:1fr 1fr;
-  }
-
-  .gallery-item{
-    height:250px;
-  }
-
-  .about,
-  .order-wrapper{
-    grid-template-columns:1fr;
-    gap:45px;
-  }
-
-  .footer-grid{
-    grid-template-columns:1fr 1fr;
-  }
-}
-
-@media(max-width:500px){
-
-  .collection-nav{
-    grid-template-columns:1fr;
-  }
-
-  .cards{
-    grid-template-columns:1fr;
-  }
-
-  .gallery-grid{
-    grid-template-columns:1fr;
-  }
-
-  .gallery-item{
-    height:350px;
-  }
-
-  .about-list{
-    grid-template-columns:1fr 1fr;
-  }
-
-  .footer-grid{
-    grid-template-columns:1fr;
-  }
-
-  form{
-    padding:22px;
-  }
-}
-</style>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
 <header>
+  <div class="nav">
 
-  <div class="logo">TRUSTIE CLOTHINGS</div>
+    <a href="#home" class="logo">
+      TRUSTIE <span>CLOTHINGS</span>
+    </a>
 
-  <nav>
-    <a href="#collection">Collections</a>
-    <a href="#about">About</a>
-    <a href="#order">Order</a>
-  </nav>
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
 
-  <div class="customer">
-    Customer Service: +234 813 033 6308
+    <nav id="navMenu">
+      <a href="#collections">Collections</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#about">About</a>
+      <a href="#order">Order</a>
+      <a href="https://wa.me/2348130336308" target="_blank">
+        WhatsApp
+      </a>
+    </nav>
+
   </div>
-
 </header>
 
 
 <!-- HERO -->
 
-<section class="hero">
+<section class="hero" id="home">
 
-  <div class="hero-content">
+  <div class="hero-text">
 
-    <div class="label">PREMIUM MEN'S FASHION</div>
+    <p class="gold-text">PREMIUM MEN'S FASHION</p>
 
     <h1>
       TRUST THE FIT.<br>
-      OWN THE ROOM.
+      <span>OWN THE ROOM.</span>
     </h1>
 
-    <p>
-      <strong>Dress in confidence.</strong><br><br>
-
+    <p class="description">
       TRUSTIE CLOTHINGS brings refined men's fashion together —
       native wears, caftans, statement vintage shirts and more,
       selected for men who want their style to speak first.
     </p>
 
     <div class="buttons">
-      <a href="#collection" class="btn">EXPLORE COLLECTION</a>
-      <a href="#order" class="btn dark">PLACE AN ORDER</a>
+
+      <a href="#collections" class="btn gold-btn">
+        Explore Collection
+      </a>
+
+      <a href="#order" class="btn">
+        Place an Order
+      </a>
+
     </div>
+
+  </div>
+
+
+  <div class="hero-image">
+
+    <!-- YOUR FIRST PHOTO -->
+    <img
+      src="PASTE-YOUR-FIRST-IMAGE-URL-HERE"
+      alt="TRUSTIE CLOTHINGS"
+    >
 
   </div>
 
 </section>
 
 
-<!-- COLLECTION NAVIGATION -->
+<!-- COLLECTIONS -->
 
-<div class="collection-nav" id="collection">
+<section id="collections">
 
-  <div>
-    <span>01</span>
-    <h3>NATIVE COLLECTION</h3>
+  <div class="section-title">
+
+    <p class="gold-text">THE EDIT</p>
+
+    <h2>Signature Collections</h2>
+
+    <p>
+      From traditional elegance to bold contemporary prints,
+      discover pieces made to stand out.
+    </p>
+
   </div>
 
-  <div>
-    <span>02</span>
-    <h3>VINTAGE SHIRTS</h3>
+
+  <div class="collection-grid">
+
+
+    <!-- NATIVE -->
+
+    <a href="#order" class="collection-card">
+
+      <img
+        src="PASTE-YOUR-SECOND-IMAGE-URL-HERE"
+        alt="Native Wear"
+      >
+
+      <div class="card-overlay">
+
+        <small>01</small>
+
+        <h3>Native Wear</h3>
+
+        <p>
+          Traditional style, elevated.
+        </p>
+
+      </div>
+
+    </a>
+
+
+    <!-- VINTAGE -->
+
+    <a href="#order" class="collection-card">
+
+      <img
+        src="PASTE-YOUR-FOURTH-IMAGE-URL-HERE"
+        alt="Vintage Shirts"
+      >
+
+      <div class="card-overlay">
+
+        <small>02</small>
+
+        <h3>Vintage Shirts</h3>
+
+        <p>
+          Statement prints for modern men.
+        </p>
+
+      </div>
+
+    </a>
+
+
+    <!-- CAFTAN -->
+
+    <a href="#order" class="collection-card">
+
+      <img
+        src="PASTE-YOUR-THIRD-IMAGE-URL-HERE"
+        alt="Caftan"
+      >
+
+      <div class="card-overlay">
+
+        <small>03</small>
+
+        <h3>Caftans</h3>
+
+        <p>
+          Clean silhouettes. Premium presence.
+        </p>
+
+      </div>
+
+    </a>
+
+
+    <!-- MEN'S WEAR -->
+
+    <a href="#order" class="collection-card">
+
+      <img
+        src="PASTE-YOUR-SIXTH-IMAGE-URL-HERE"
+        alt="Men's Wear"
+      >
+
+      <div class="card-overlay">
+
+        <small>∞</small>
+
+        <h3>Men's Wear</h3>
+
+        <p>
+          More to discover.
+        </p>
+
+      </div>
+
+    </a>
+
   </div>
 
-  <div>
-    <span>03</span>
-    <h3>CAFTAN STYLES</h3>
-  </div>
-
-  <div>
-    <span>∞</span>
-    <h3>MORE TO DISCOVER</h3>
-  </div>
-
-</div>
+</section>
 
 
 <!-- THE EDIT -->
 
-<section class="edit">
+<section class="dark-section">
 
-  <div class="section-label">THE EDIT</div>
+  <div class="section-title">
 
-  <h2 class="section-title">
-    Signature Collections
-  </h2>
+    <p class="gold-text">
+      TRUSTIE CLOTHINGS
+    </p>
 
-  <p class="intro">
-    From traditional elegance to bold contemporary prints,
-    discover pieces made to stand out.
-  </p>
+    <h2>The Edit</h2>
 
-  <div class="cards">
+  </div>
 
-    <div class="card">
-      <div class="card-image"></div>
 
-      <div class="card-info">
-        <h3>Native Wear</h3>
-        <p>Traditional style, elevated.</p>
-      </div>
+  <div class="edit">
+
+    <div class="edit-image">
+
+      <img
+        src="PASTE-YOUR-THIRD-IMAGE-URL-HERE"
+        alt="TRUSTIE Native Collection"
+      >
+
     </div>
 
 
-    <div class="card">
-      <div class="card-image"></div>
+    <div class="edit-list">
 
-      <div class="card-info">
-        <h3>Caftans</h3>
-        <p>Clean silhouettes. Premium presence.</p>
+      <div>
+        <span>01</span>
+
+        <h3>Native Collection</h3>
+
+        <p>
+          Refined traditional pieces designed for confidence.
+        </p>
       </div>
-    </div>
 
 
-    <div class="card">
-      <div class="card-image"></div>
+      <div>
+        <span>02</span>
 
-      <div class="card-info">
         <h3>Vintage Shirts</h3>
-        <p>Statement prints for modern men.</p>
+
+        <p>
+          Bold prints and distinctive pieces with character.
+        </p>
       </div>
-    </div>
 
 
-    <div class="card">
-      <div class="card-image"></div>
+      <div>
+        <span>03</span>
 
-      <div class="card-info">
+        <h3>Caftan Styles</h3>
+
+        <p>
+          Relaxed silhouettes with a premium presence.
+        </p>
+      </div>
+
+
+      <div>
+        <span>04</span>
+
         <h3>Men's Wear</h3>
-        <p>Everyday pieces with character.</p>
+
+        <p>
+          Everyday pieces selected to elevate your wardrobe.
+        </p>
       </div>
+
     </div>
 
   </div>
@@ -661,26 +283,51 @@ footer a{
 
 <!-- GALLERY -->
 
-<section class="gallery">
+<section id="gallery" class="dark-section">
 
-  <div class="section-label">TRUSTIE VISUALS</div>
+  <div class="section-title">
 
-  <h2 class="section-title">
-    The Gallery
-  </h2>
+    <p class="gold-text">
+      TRUSTIE VISUALS
+    </p>
 
-  <p class="intro">
-    A preview of styles currently featured by TRUSTIE CLOTHINGS.
-  </p>
+    <h2>The Gallery</h2>
 
-  <div class="gallery-grid">
+    <p>
+      A preview of styles currently featured by
+      TRUSTIE CLOTHINGS.
+    </p>
 
-    <div class="gallery-item"></div>
-    <div class="gallery-item"></div>
-    <div class="gallery-item"></div>
-    <div class="gallery-item"></div>
-    <div class="gallery-item"></div>
-    <div class="gallery-item"></div>
+  </div>
+
+
+  <div class="gallery">
+
+    <img
+      src="PASTE-YOUR-FIRST-IMAGE-URL-HERE"
+      alt="Trustie Fashion"
+      class="big"
+    >
+
+    <img
+      src="PASTE-YOUR-SECOND-IMAGE-URL-HERE"
+      alt="Native Wear"
+    >
+
+    <img
+      src="PASTE-YOUR-FOURTH-IMAGE-URL-HERE"
+      alt="Vintage Shirt"
+    >
+
+    <img
+      src="PASTE-YOUR-FIFTH-IMAGE-URL-HERE"
+      alt="Vintage Shirt"
+    >
+
+    <img
+      src="PASTE-YOUR-SIXTH-IMAGE-URL-HERE"
+      alt="Men's Fashion"
+    >
 
   </div>
 
@@ -689,46 +336,59 @@ footer a{
 
 <!-- ABOUT -->
 
-<section class="about" id="about">
+<section id="about">
 
-  <div>
+  <div class="about">
 
-    <div class="section-label">ABOUT TRUSTIE</div>
+    <div>
 
-    <h2 class="section-title">
-      Style with<br>
-      presence.
-    </h2>
+      <p class="gold-text">
+        ABOUT TRUSTIE
+      </p>
 
-  </div>
+      <h2>
+        Style with
+        <span>presence.</span>
+      </h2>
 
+      <p class="about-text">
+        TRUSTIE CLOTHINGS specializes in men's wears,
+        native wears, caftans, vintage shirts and more.
+        Our goal is simple: make it easier for you to find
+        clothing that looks sharp, feels right and gives
+        you confidence.
+      </p>
 
-  <div>
+      <p class="about-text">
+        Browse the collection, choose your preferred style,
+        then send your order directly to our WhatsApp
+        customer service. We'll take it from there.
+      </p>
 
-    <p class="about-text">
-
-      TRUSTIE CLOTHINGS specializes in men's wears,
-      native wears, caftan, vintage shirts and more.
-
-      Our goal is simple: make it easier for you to find
-      clothing that looks sharp, feels right and gives
-      you confidence.
-
-      <br><br>
-
-      Browse the collection, choose your preferred style,
-      then send your order directly to our WhatsApp
-      customer service. We'll take it from there.
-
-    </p>
+    </div>
 
 
-    <div class="about-list">
+    <div class="features">
 
-      <div>01 &nbsp; Men's Fashion</div>
-      <div>02 &nbsp; Native Styles</div>
-      <div>03 &nbsp; Caftans</div>
-      <div>04 &nbsp; Vintage Shirts</div>
+      <div>
+        <span>01</span>
+        <h3>Men's Fashion</h3>
+      </div>
+
+      <div>
+        <span>02</span>
+        <h3>Native Styles</h3>
+      </div>
+
+      <div>
+        <span>03</span>
+        <h3>Caftans</h3>
+      </div>
+
+      <div>
+        <span>04</span>
+        <h3>Vintage Shirts</h3>
+      </div>
 
     </div>
 
@@ -739,137 +399,203 @@ footer a{
 
 <!-- ORDER -->
 
-<section class="order" id="order">
+<section id="order" class="dark-section">
 
-  <div class="order-wrapper">
+  <div class="section-title">
+
+    <p class="gold-text">
+      ORDER / ENQUIRIES
+    </p>
+
+    <h2>Let's get you dressed.</h2>
+
+  </div>
+
+
+  <div class="order-box">
 
     <div class="order-info">
 
-      <div class="section-label">TRUSTIE CLOTHINGS</div>
-
-      <h2 class="section-title">
-        Let's get you<br>
-        dressed.
+      <h2>
+        Make your
+        <span>move.</span>
       </h2>
 
       <p>
-        Fill in the form. When you submit, WhatsApp will
-        open with your order details already prepared for
+        Fill in the form and WhatsApp will open with
+        your order details already prepared for
         TRUSTIE CLOTHINGS customer service.
       </p>
 
-      <br>
+      <div class="contact">
 
-      <strong>CUSTOMER SERVICE</strong>
+        <small>CUSTOMER SERVICE</small>
 
-      <p>+234 813 033 6308</p>
+        <a href="tel:+2348130336308">
+          +234 813 033 6308
+        </a>
 
-      <br>
-
-      <strong>WHATSAPP</strong>
+      </div>
 
     </div>
 
 
     <form id="orderForm">
 
-      <div class="form-group">
-        <label>FULL NAME *</label>
-        <input type="text" id="name" required>
+      <div class="form-grid">
+
+        <div>
+          <label>Full Name *</label>
+
+          <input
+            type="text"
+            id="name"
+            required
+          >
+        </div>
+
+
+        <div>
+          <label>Phone Number *</label>
+
+          <input
+            type="tel"
+            id="phone"
+            required
+          >
+        </div>
+
+
+        <div>
+          <label>Category *</label>
+
+          <select id="category" required>
+
+            <option value="">
+              Select category
+            </option>
+
+            <option>
+              Men's Wear
+            </option>
+
+            <option>
+              Native Wear
+            </option>
+
+            <option>
+              Caftan
+            </option>
+
+            <option>
+              Vintage Shirt
+            </option>
+
+            <option>
+              Other
+            </option>
+
+          </select>
+
+        </div>
+
+
+        <div>
+          <label>Size</label>
+
+          <select id="size">
+
+            <option value="">
+              Select size
+            </option>
+
+            <option>S</option>
+            <option>M</option>
+            <option>L</option>
+            <option>XL</option>
+            <option>XXL</option>
+            <option>XXXL</option>
+
+            <option>
+              Custom / Not sure
+            </option>
+
+          </select>
+
+        </div>
+
+
+        <div>
+          <label>Product / Style *</label>
+
+          <input
+            type="text"
+            id="product"
+            placeholder="Example: White native wear"
+            required
+          >
+
+        </div>
+
+
+        <div>
+          <label>Quantity *</label>
+
+          <input
+            type="number"
+            id="quantity"
+            min="1"
+            value="1"
+            required
+          >
+
+        </div>
+
+
+        <div class="full">
+
+          <label>
+            Delivery Location *
+          </label>
+
+          <input
+            type="text"
+            id="location"
+            placeholder="City / Area"
+            required
+          >
+
+        </div>
+
+
+        <div class="full">
+
+          <label>
+            Additional Message
+          </label>
+
+          <textarea
+            id="message"
+            placeholder="Any additional information..."
+          ></textarea>
+
+        </div>
+
+
+        <div class="full">
+
+          <button type="submit">
+            SUBMIT ORDER ON WHATSAPP →
+          </button>
+
+          <p class="note">
+            No payment is taken on this website.
+            Your order details will be sent to WhatsApp.
+          </p>
+
+        </div>
+
       </div>
-
-
-      <div class="form-group">
-        <label>PHONE NUMBER *</label>
-        <input type="tel" id="phone" required>
-      </div>
-
-
-      <div class="form-group">
-        <label>CATEGORY *</label>
-
-        <select id="category" required>
-
-          <option value="">Select category</option>
-          <option>Men's Wear</option>
-          <option>Native Wear</option>
-          <option>Caftan</option>
-          <option>Vintage Shirt</option>
-          <option>Other</option>
-
-        </select>
-
-      </div>
-
-
-      <div class="form-group">
-
-        <label>SIZE</label>
-
-        <select id="size">
-
-          <option value="">Select size</option>
-          <option>S</option>
-          <option>M</option>
-          <option>L</option>
-          <option>XL</option>
-          <option>XXL</option>
-          <option>XXXL</option>
-          <option>Custom / Not sure</option>
-
-        </select>
-
-      </div>
-
-
-      <div class="form-group">
-
-        <label>PRODUCT / STYLE *</label>
-
-        <input type="text" id="product" required>
-
-      </div>
-
-
-      <div class="form-group">
-
-        <label>QUANTITY *</label>
-
-        <input type="number" id="quantity" min="1" value="1" required>
-
-      </div>
-
-
-      <div class="form-group">
-
-        <label>DELIVERY LOCATION *</label>
-
-        <input type="text" id="location" required>
-
-      </div>
-
-
-      <div class="form-group">
-
-        <label>ADDITIONAL MESSAGE</label>
-
-        <textarea id="message"></textarea>
-
-      </div>
-
-
-      <p style="font-size:11px;color:#777;margin-bottom:20px;line-height:1.6;">
-
-        By submitting, your order details will be opened
-        in WhatsApp for direct communication with
-        TRUSTIE CLOTHINGS. No payment is taken on this website.
-
-      </p>
-
-
-      <button type="submit" class="submit">
-        SUBMIT ORDER ON WHATSAPP →
-      </button>
 
     </form>
 
@@ -882,50 +608,30 @@ footer a{
 
 <footer>
 
-  <div class="footer-grid">
+  <div class="footer">
 
-    <div>
-
-      <h3>TRUSTIE CLOTHINGS</h3>
-
-      <p>
-        Premium men's fashion for men who want
-        their style to speak first.
-      </p>
-
+    <div class="logo">
+      TRUSTIE <span>CLOTHINGS</span>
     </div>
 
-
     <div>
 
-      <h3>Collections</h3>
+      <a href="#collections">
+        Collections
+      </a>
 
-      <a href="#collection">Native Wear</a><br>
-      <a href="#collection">Caftans</a><br>
-      <a href="#collection">Vintage Shirts</a><br>
-      <a href="#collection">Men's Wear</a>
+      <a href="#about">
+        About
+      </a>
 
-    </div>
+      <a href="#order">
+        Order
+      </a>
 
-
-    <div>
-
-      <h3>Explore</h3>
-
-      <a href="#about">About</a><br>
-      <a href="#collection">Collection</a><br>
-      <a href="#order">Order</a>
-
-    </div>
-
-
-    <div>
-
-      <h3>Contact</h3>
-
-      <p>+234 813 033 6308</p>
-
-      <a href="https://wa.me/2348130336308">
+      <a
+        href="https://wa.me/2348130336308"
+        target="_blank"
+      >
         WhatsApp
       </a>
 
@@ -934,82 +640,106 @@ footer a{
   </div>
 
 
-  <div class="copyright">
-
-    © 2026 TRUSTIE CLOTHINGS. All rights reserved.
-
-  </div>
+  <p class="copyright">
+    © 2026 TRUSTIE CLOTHINGS.
+    All rights reserved.
+  </p>
 
 </footer>
 
 
-<!-- WHATSAPP ORDER SCRIPT -->
+<a
+  href="https://wa.me/2348130336308"
+  target="_blank"
+  class="whatsapp"
+>
+  ☎
+</a>
+
 
 <script>
 
-document.getElementById("orderForm").addEventListener("submit", function(e){
+function toggleMenu(){
 
-  e.preventDefault();
+  document
+    .getElementById("navMenu")
+    .classList
+    .toggle("active");
 
-  const name =
-    document.getElementById("name").value;
-
-  const phone =
-    document.getElementById("phone").value;
-
-  const category =
-    document.getElementById("category").value;
-
-  const size =
-    document.getElementById("size").value;
-
-  const product =
-    document.getElementById("product").value;
-
-  const quantity =
-    document.getElementById("quantity").value;
-
-  const location =
-    document.getElementById("location").value;
-
-  const message =
-    document.getElementById("message").value;
+}
 
 
-  const whatsappMessage =
+document
+  .getElementById("orderForm")
+  .addEventListener("submit", function(e){
 
-`Hello TRUSTIE CLOTHINGS,
+    e.preventDefault();
+
+    const name =
+      document.getElementById("name").value;
+
+    const phone =
+      document.getElementById("phone").value;
+
+    const category =
+      document.getElementById("category").value;
+
+    const size =
+      document.getElementById("size").value ||
+      "Not specified";
+
+    const product =
+      document.getElementById("product").value;
+
+    const quantity =
+      document.getElementById("quantity").value;
+
+    const location =
+      document.getElementById("location").value;
+
+    const message =
+      document.getElementById("message").value ||
+      "None";
+
+
+    const whatsappMessage =
+
+`Hello TRUSTIE CLOTHINGS 👋
 
 I would like to place an order.
 
-FULL NAME: ${name}
+*ORDER DETAILS*
 
-PHONE NUMBER: ${phone}
+Full Name: ${name}
 
-CATEGORY: ${category}
+Phone Number: ${phone}
 
-SIZE: ${size || "Not specified"}
+Category: ${category}
 
-PRODUCT / STYLE: ${product}
+Product / Style: ${product}
 
-QUANTITY: ${quantity}
+Size: ${size}
 
-DELIVERY LOCATION: ${location}
+Quantity: ${quantity}
 
-ADDITIONAL MESSAGE:
-${message || "None"}
+Delivery Location: ${location}
+
+Additional Message:
+${message}
+
+Please let me know the availability and total price.
 
 Thank you.`;
 
 
-  const whatsappURL =
-    "https://wa.me/2348130336308?text=" +
-    encodeURIComponent(whatsappMessage);
+    const url =
+      "https://wa.me/2348130336308?text=" +
+      encodeURIComponent(whatsappMessage);
 
 
-  window.open(whatsappURL, "_blank");
+    window.open(url, "_blank");
 
-});
+  });
 
 </script>
 
